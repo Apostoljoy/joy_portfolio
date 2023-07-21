@@ -78,43 +78,11 @@
         </div> 
     </div>
 </div>
-<!----------------------services------------------->
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div> 
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Design</h2>
-                <p> As a web UI designer, I create visually appealing and intuitive interfaces for an enhanced user experience. 
-                    My focus is on crafting engaging designs that are user-friendly and visually striking. 
-                    I stay updated with design trends to continuously improve and refine my work, 
-                    ultimately aiming to create seamless and enjoyable web interfaces.</p>
-              <!----<a href="#">Learn more</a> ------>  
-             </div>
-             <div> 
-                <i class="fa-solid fa-crop"></i>
-                <h2>UI/UX Design</h2>
-                <p> My goal as a UI/UX designer is to create designs that not only captivate users but also provide them with a seamless and enjoyable journey. 
-                    By combining aesthetics, usability, and empathy, 
-                    I strive to make a positive impact on users' lives through intuitive and visually appealing digital experiences.</p>
-             <!----<a href="#">Learn more</a> ------> 
-             </div>
-             <div> 
-                <i class="fa-brands fa-app-store"></i>
-                <h2>App Design</h2>
-                <p> I aim to deliver seamless and engaging experiences. 
-                    My attention to detail and passion for innovation ensure that I create interfaces 
-                    that exceed expectations and leave a lasting impression.</p>
-             <!----<a href="#">Learn more</a> ------> 
-             </div>
-        </div>
-    </div>
-</div>
-<!---------------------portfolio------------------->
+<!----------------------portfolio------------------->
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
+        <h3 class="work-title">UI/UX Design</h3>
         <div class="work-list">
         <div class="work">
             <img src="images/work1.png">
@@ -140,10 +108,58 @@
                 <a href="images/Shoehub UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
         </div>
+
+        <div class="work">
+            <img src="images/work4.png">
+            <div class="layer">
+                <h3>Bulletfire Web System</h3>
+                <p>User Interface design for Bulletfire Web using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+        <div class="work-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+
     </div>
-        <a href="#" class="btn">See more</a>
+    <a href="#portfolio" class="btn">See more</a>
 </div>
 </div>
+</div>
+
+
+
 <!--------------------------contact------------------------------->
 <div id="contact">
     <div class="container">
@@ -211,27 +227,35 @@
         sidemenu.style.right = "-200px";    
     }
 </script>
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyftVTdjrEkl5PnS1s9aaCMRONU95WOL5qLuLuZVcgf02ShATnr-6EaqOzxKUSehHv9gA/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
+<script>
+    // Function to toggle the visibility of hidden works
+    function toggleHiddenWorks() {
+      const hiddenWorks = document.querySelectorAll(".work-hidden");
+      const btn = document.querySelector(".btn");
+  
+      // Loop through the hidden works and toggle their display property
+      hiddenWorks.forEach(work => {
+        if (work.classList.contains("hidden")) {
+          work.classList.remove("hidden");
+        } else {
+          work.classList.add("hidden");
+        }
+      });
+  
+      // Change the "See more" button text based on the hidden works' visibility
+      if (btn.innerText === "See more") {
+        btn.innerText = "See less";
+      } else {
+        btn.innerText = "See more";
+      }
+    }
+  
+    // Add event listener to the "See more" button to trigger the toggleHiddenWorks function
+    const btn = document.querySelector(".btn");
+    btn.addEventListener("click", toggleHiddenWorks);
   </script>
-   
 
 </body>
 </html>
 
-<!------------1:35:15--------->
