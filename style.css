@@ -11,6 +11,37 @@ body{
     background: #080808;
     color: #fff;
 }
+
+/*---------------------backtotopbtn----------------*/
+#progress {
+    
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    height: 50px;
+    width: 50px;
+    display: none; /* Initially hidden */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff9f29;
+    cursor: pointer;
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+#progress-value {
+    height: 40px;
+    width: 40px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: grid;
+    place-items: center; /* For centering the child content */
+    font-size: 30px;
+    color: #ffffff;
+    position: relative; /* Set to relative to center the content within #progress */
+}
+
+
 #header{
     width: 100%;
     height: 100vh;
@@ -318,6 +349,157 @@ flex-basis: 35%;
 .btn:hover{
     background: #ff9f29;
 }
+
+
+/*---------------------portfolio2----------------*/
+
+#portfolio{
+    padding: 30px 0;
+}
+
+.work-title2{
+    padding-top: none;
+    color: #ff9f29;
+
+}
+
+.work-list2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 10px;
+}
+
+.work2-hidden.hidden{
+    display: none;
+}
+.work2{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+.work2 img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer2{
+    width: 100%;
+    height: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.447), hsl(35, 100%, 50%));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer2 h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer2 a{
+    margin-top: 20px;
+    color: #ff9f29;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work2:hover img{
+    transform: scale(1.1);
+}
+.work2:hover .layer2{
+    height:100%;
+}
+
+.work2-hidden {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .work2-hidden img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+  }
+  
+  .work2-hidden .layer2 {
+    width: 100%;
+    height: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.447), hsl(35, 100%, 50%));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+  }
+  
+  .work2-hidden .layer2 h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .work2-hidden .layer2 a {
+    margin-top: 20px;
+    color: #ff9f29;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .work2-hidden:hover img {
+    transform: scale(1.1);
+  }
+  
+  .work2-hidden:hover .layer2 {
+    height: 100%;
+  }
+
+
+.btn2{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff9f29;
+    padding: 14px 50px; 
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn2:hover{
+    background: #ff9f29;
+}
+
 
 /*---------------------contact----------------*/
 

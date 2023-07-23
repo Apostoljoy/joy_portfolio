@@ -10,6 +10,13 @@
     <script src="https://kit.fontawesome.com/4063bdfaaf.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<!----------------------backtotopbtn------------------>
+<div id="progress" style="display: none;">
+    <span id="progress-value">&#x1F815;</span>
+</div>
+
+
+
 <div id="header">
     <div class="container">
         <nav>
@@ -158,6 +165,84 @@
 </div>
 </div>
 
+<!----------------------portfolio2------------------->
+<div id="portfolio2">
+    <div class="container">
+        <h3 class="work-title2">Graphic Design</h3>
+        <div class="work-list2">
+        <div class="work2">
+            <img src="images/work1.png">
+            <div class="layer2">
+                <h3>Cafecitea Web System</h3>
+                <p>Anime themed UI design for CAFEciTEA using Figma.</p>
+                <a href="images/Cafecitea UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work2">
+            <img src="images/work2.png">
+            <div class="layer2">
+                <h3>Kidszone Web System</h3>
+                <p>User Interface design for Kidszone Web using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work2">
+            <img src="images/work3.png">
+            <div class="layer2">
+                <h3>ShoeHub App</h3>
+                <p>User Interface design for ShoeHub App using Figma.</p>
+                <a href="images/Shoehub UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+        <div class="work2">
+            <img src="images/work4.png">
+            <div class="layer2">
+                <h3>Bulletfire Web System</h3>
+                <p>User Interface design for Bulletfire Web using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work2-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer2">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+        <div class="work2-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer2">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work2-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer2">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work2-hidden hidden">
+            <img src="images/work5.png">
+            <div class="layer2">
+                <h3>Coffee Shop App</h3>
+                <p>User Interface design for Coffee Shop using Figma.</p>
+                <a href="images/Kidszone UI.pdf"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+    <a href="#work-title2" class="btn2">See more</a>
+</div>
+</div>
+</div>
 
 
 <!--------------------------contact------------------------------->
@@ -228,6 +313,7 @@
     }
 </script>
 
+<!----------------------portfolio------------------->
 <script>
     // Function to toggle the visibility of hidden works
     function toggleHiddenWorks() {
@@ -256,6 +342,68 @@
     btn.addEventListener("click", toggleHiddenWorks);
   </script>
 
+<!----------------------portfolio2------------------->
+<script>
+    // Function to toggle the visibility of hidden works
+    function toggleHiddenWorks() {
+      const hiddenWorks = document.querySelectorAll(".work2-hidden");
+      const btn2 = document.querySelector(".btn2");
+  
+      // Loop through the hidden works and toggle their display property
+      hiddenWorks.forEach(work => {
+        if (work.classList.contains("hidden")) {
+          work.classList.remove("hidden");
+        } else {
+          work.classList.add("hidden");
+        }
+      });
+  
+      // Change the "See more" button text based on the hidden works' visibility
+      if (btn2.innerText === "See more") {
+        btn2.innerText = "See less";
+      } else {
+        btn2.innerText = "See more";
+      }
+    }
+  
+    // Add event listener to the "See more" button to trigger the toggleHiddenWorks function
+    const btn2 = document.querySelector(".btn2");
+    btn2.addEventListener("click", toggleHiddenWorks);
+  </script>
+
+<!----------------------backtotopbtn------------------>
+
+<script>
+    // Function to handle the "pageup" action
+    function scrollToTop() {
+        // Smoothly scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    // Get the circular element by its id
+    const progressElement = document.getElementById("progress");
+
+    // Function to show/hide the "pageup" button based on scroll position
+    function togglePageButtonVisibility() {
+        if (window.scrollY > 100) {
+            // If the user has scrolled more than 100 pixels, show the button
+            progressElement.style.display = "grid";
+        } else {
+            // Otherwise, hide the button
+            progressElement.style.display = "none";
+        }
+    }
+
+    // Add a scroll event listener to the window
+    window.addEventListener("scroll", togglePageButtonVisibility);
+
+    // Add a click event listener to the circular element
+    progressElement.addEventListener("click", scrollToTop);
+
+</script>
 </body>
 </html>
 
